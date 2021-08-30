@@ -18,16 +18,14 @@ def minfn(a,b):
 
 # take x and an array as input
 def exp1(X,arr):
+    # initial minimum remainder as maximum remainder
+    min_rem=float('inf')
     # initial maximum remainder
     max_rem=arr[0]%X
     for i in arr:
-        # check max rem. for each value
+        # check min & max rem. for each value
         max_rem=maxfn(max_rem,i%X)
-    # initial minimum remainder as maximum remainder
-    min_rem=max_rem
-    for i in arr:
-        if i%X>0 :
-            # check min rem. for each val
+        if i%X>0:
             min_rem=minfn(i%X,min_rem)
     # return max remainder and min remainder
     return max_rem,min_rem
