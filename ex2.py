@@ -16,11 +16,8 @@ def sumfn(arr):
 def exp2(x,*args):
     temp=[] 
     for arg in args:
-        for val in arg:
-            # filter elements greater than x
-            if val > x and val not in temp:
-                # add in the list and no duplicates
-                temp.append(val)
+        # filter elements greater than x and add in the list with no duplicates 
+        temp+=[val for val in arg if val>x and val not in temp]
     # return the sum of list
     return sumfn(temp)
 
