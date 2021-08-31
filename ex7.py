@@ -5,7 +5,7 @@
 # divisible by X, Only then it forms a pair.
 
 # Function to return only the pair that has max value
-def maxval(arr):
+def max_fn(arr):
     maxval=float('-inf')
     for i in range(len(arr)):
         if arr[i][0]>maxval:
@@ -21,7 +21,7 @@ def ex7(x,arr1,arr2):
     # pairs of numbers from both lists divisible by X at index n.
     res=[(arr1[i],arr2[i])  for i in range(len(arr1)) if arr1[i]%x==0 and arr2[i]%x==0]
     # print(res)
-    return maxval(res)
+    return max_fn(res)
 
 
 # Run the function for given input

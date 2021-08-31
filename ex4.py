@@ -18,7 +18,7 @@ def maxfn(arr):
     return res
 
 # function for divisible element count
-def div(n,arr):
+def div_fn(n,arr):
     if n==0:
         print("Not Divisible by zero")
         return
@@ -34,16 +34,16 @@ def ex4(x,*args):
     # enumerate the multiple arguments
     marr= list(enumerate(args))
     # count divisible by x and save in list
-    temp=[div(x,v) for k,v in marr]
+    temp=[div_fn(x,v) for k,v in marr]
     # find the index of max count
     index=[i for i in range(lenfn(temp)) if temp[i]>= maxfn(temp)]
     # if one array
     if lenfn(index)==1:
         return marr[index[0]][1]
     # if more than one array
-    else:
-        res=[ v for i in index for v in marr[i][1] if v%x==0]
-    return res
+    
+    return [ v for i in index for v in marr[i][1] if v%x==0]
+
 
 # Run the function for given input
 print(ex4(3,[1,2,3,4,5],[1,3,4,6,9],[10,12,9,7,8],[12,7,9,8,14]))
