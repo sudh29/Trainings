@@ -10,9 +10,19 @@
 # a char from String A. Function to find out ways to form a string from 
 # another string. Function will take 2 strings as inputs.
 
-def ex11():
-    return
+def ex11(list_str1,list_str2):
+    op=[]
+    res={}
+    for idx, val in enumerate(list_str2):
+        if val in list_str1:
+            res[idx]=val
+        if len(res)==len(list_str1):
+            op.append(res)
+            res={}
+    return op
 
 
 # Run the function for given input
 print(ex11("abc", "agcb xyzbc amnopq copnotab coscab"))
+
+# print(ex11("ab", "agcb xyzbc amnopq copnotab coscabbb"))
